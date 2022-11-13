@@ -1,6 +1,15 @@
-import React, { FormEvent, useRef } from "react";
+import { FormEvent, useEffect, useRef } from "react";
+import "./Search.css";
 
-function Search({setResults}: {setResults: any}) {
+function Search({
+  setResults,
+  setLoading,
+  setError,
+}: {
+  setResults: any;
+  setLoading: any;
+  setError: any;
+}) {
   const searchInput = useRef<HTMLInputElement>(null);
 
   // API call to our server for countries
@@ -23,17 +32,40 @@ function Search({setResults}: {setResults: any}) {
   // Handle search submission
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault(); // Prevent page refresh on form submit
+    setLoading(true);
     if (searchInput.current != null) {
       // Make sure searchInput is not null
       pullData(searchInput.current.value.trim())
-        .then((res) => setResults(res))
+        .then((res) => {
+          if (res.status === 404) {
+            setError(
+              "No results found. Check your spelling or try a different search term."
+            );
+            setLoading(false);
+          } else {
+            setError('');
+            setResults(res);
+            setLoading(false);
+          }
+        })
         .catch((err) => console.error(err));
     }
   };
 
+  useEffect(() => {
+    pullData("")
+      .then((res) => {
+        setError('');
+        setResults(res);
+        setLoading(false);
+      })
+      .catch((err) => console.error(err));
+  }, []);
+
   return (
-    <div>
+    <div className="searchWrapper">
       <form onSubmit={(e) => handleSubmit(e)}>
+        <h1>Search countries</h1>
         <input
           ref={searchInput}
           type="text"

@@ -1,0 +1,40 @@
+.listWrapper {
+    position: relative;
+    list-style: none;
+    overflow: auto;
+    height: calc(100vh - 200px);
+    padding: 15px 5% 0;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.listWrapper::before {
+    position: fixed;
+    top: 184px;
+    z-index: 5;
+    content: '';
+    width: 90%;
+    height: 25px;
+    background: linear-gradient(var(--background), rgba(0, 0, 0, 0))
+}
+
+.spinner {
+    height: 25vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.spinner svg {
+    color: var(--text);
+    font-size: 50px;
+    animation: spinner forwards infinite 1s ease-in-out;
+}
+
+@keyframes spinner {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}

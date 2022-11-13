@@ -1,0 +1,77 @@
+.searchWrapper {
+    padding-top: 25px;
+    padding-bottom: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.searchWrapper::before {
+    position: absolute;
+    top: -50%;
+    z-index: 0;
+    content: '';
+    width: 100%;
+    height: 200px;
+    background-image: url('https://i0.wp.com/css-tricks.com/wp-content/uploads/2019/12/flag-sprite.png?fit=1200%2C600&ssl=1');
+    background-position: center;
+    background-size: cover;
+}
+
+.searchWrapper::after {
+    position: absolute;
+    top: -45%;
+    z-index: 0;
+    content: '';
+    width: 100%;
+    height: 200px;
+    background: linear-gradient(rgba(0, 0, 0, 0), var(--background) 90%);
+}
+
+.searchWrapper form {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--card);
+    height: 150px;
+    width: 90%;
+    max-width: 500px;
+    padding: 20px;
+    border-radius: var(--card-border);
+    box-shadow: var(--card-shadow);
+    gap: 10px;
+}
+
+.searchWrapper h1 {
+    color: var(--text);
+    text-transform: uppercase;
+    font-size: 1.25rem;
+}
+
+.searchWrapper input[type='text'] {
+    padding: 6.5px 0;
+    width: 100%;
+    border-radius: 10px;
+    text-indent: 10px;
+    border: 1px solid var(--text);
+}
+
+.searchWrapper input[type='submit'] {
+    background-color: var(--button);
+    color: var(--button-text);
+    font-weight: 800;
+    border: none;
+    width: 100%;
+    padding: 6.5px 0;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all .25s ease-in-out;
+}
+
+.searchWrapper input[type='submit']:hover {
+    background-color: var(--button-hover);
+}

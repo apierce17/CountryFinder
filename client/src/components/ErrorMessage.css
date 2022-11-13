@@ -1,0 +1,17 @@
+.errorBox {
+    width: 90%;
+    background-color: var(--error);
+    margin: auto;
+    padding: 10px;
+    border-radius: var(--card-border);
+    box-shadow: var(--card-shadow);
+    color: var(--error-text);
+    animation: shake forwards 2 .25s ease-in-out;
+    text-align: center;
+}
+
+@keyframes shake {
+    0% { transform: translateX(-5px); }
+    50% { transform: translateX(5px); }
+    100% { transform: translateX(0px); }
+}
