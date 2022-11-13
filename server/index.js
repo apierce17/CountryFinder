@@ -1,12 +1,14 @@
 // import dependancies
 const express = require('express');
 const fetch = require('node-fetch');
+var cors = require('cors');
 
 // create new express app
 const app = express();
 
 // server configuration
 const PORT = 3001;
+app.use(cors())
 
 // Get list of countries
 const fetchCountries = async (term) => {
