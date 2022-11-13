@@ -1,11 +1,12 @@
-import React from 'react';
+import { useEffect, useRef, useState } from 'react';
 import './App.css';
+import Search from './components/search';
 
 function App() {
+  const [results, setResults] = useState([]);
+
   return (
-    <div>
-      
-    </div>
+      <Search setResults={setResults}/>
   );
 }
 
