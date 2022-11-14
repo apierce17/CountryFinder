@@ -39,7 +39,7 @@ function Card(props: { data: Country }) {
         </div>
         <div className="population" title={"Population of " + props.data.name}>
           <IoPeopleCircleOutline />
-          <p>{props.data.population ? props.data.population : 'N/A'}</p>
+          <p>{props.data.population ? props.data.population.toLocaleString() : 'N/A'}</p>
         </div>
       </div>
     </li>
