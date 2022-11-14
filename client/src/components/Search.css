@@ -50,6 +50,7 @@
     color: var(--text);
     text-transform: uppercase;
     font-size: 1.25rem;
+    text-align: center;
 }
 
 .searchWrapper input[type='text'] {
