@@ -3,6 +3,8 @@
 
 Search countries by name, capital, or language spoken.
 
+Quick mockup I made before getting started: https://www.figma.com/file/5Hp643Qsc1U5QOJ2ZY9l3O/Untitled
+
 
 ## Deploy locally
 
