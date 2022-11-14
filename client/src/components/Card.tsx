@@ -26,7 +26,7 @@ function Card(props: { data: Country }) {
         <h3>{props.data.name}</h3>
         <div className="capital" title={"Capital of " + props.data.name}>
           <GiCapitol />
-          <p>{props.data.capital}</p>
+          <p>{props.data.capital ? props.data.capital : 'N/A'}</p>
         </div>
         <div className="language" title={"Languages of " + props.data.name}>
           <IoLanguageSharp />
@@ -39,7 +39,7 @@ function Card(props: { data: Country }) {
         </div>
         <div className="population" title={"Population of " + props.data.name}>
           <IoPeopleCircleOutline />
-          <p>{props.data.population?.toLocaleString()}</p>
+          <p>{props.data.population ? props.data.population : 'N/A'}</p>
         </div>
       </div>
     </li>
